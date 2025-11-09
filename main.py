@@ -41,9 +41,10 @@ def init_db(app): # Initialize the database and create default roles and users
 app, api = create_app()
 CORS(app) # Enables CORS for the app (CORS-Cross Origin Resouce Sharing)
 
-from auth_apis import LoginUser, LogoutUser
+from auth_apis import LoginUser, LogoutUser, RegisterUser
 api.add_resource(LoginUser, '/api/login')
 api.add_resource(LogoutUser, '/api/logout')
+api.add_resource(RegisterUser,'/api/register')
 
 if __name__ == "__main__":
     init_db(app)
