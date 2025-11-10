@@ -46,6 +46,10 @@ api.add_resource(LoginUser, '/api/login')
 api.add_resource(LogoutUser, '/api/logout')
 api.add_resource(RegisterUser,'/api/register')
 
+from crud_api import ProductResource
+api.add_resource(ProductResource, '/api/product', '/api/product/<int:product_id>')
+
+
 if __name__ == "__main__":
     init_db(app)
     app.run(debug=True)
